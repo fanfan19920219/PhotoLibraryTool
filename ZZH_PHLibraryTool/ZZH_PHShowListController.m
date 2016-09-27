@@ -74,7 +74,11 @@
 
 
 -(void)ReturnBlock{
-    self.returnBlock(self.cachePhotoArray);
+    
+    [self.delegate ZZH_PHoto_ReturnArray:self.cachePhotoArray];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    //self.returnBlock(self.cachePhotoArray);
+    
 }
 
 -(void)tableViewPush:(UIViewController *)nextViewContoller withParameter:(id)indexParameter{

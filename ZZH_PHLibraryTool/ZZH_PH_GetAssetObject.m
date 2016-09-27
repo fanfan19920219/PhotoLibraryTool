@@ -33,6 +33,8 @@ ZZH_PH_GetAssetObject *DefaultObj;
     
     for (PHAssetCollection *assetCollection in assetCollectionsSystem) {
         [collectionArray addObject:assetCollection];
+        
+        NSLog(@"asset.name -- %@",assetCollection.localizedTitle);
         [self addModel:assetCollection WithArray:listArray];
         //[self enumerateAssetsInAssetCollection:assetCollection original:NO];
     }

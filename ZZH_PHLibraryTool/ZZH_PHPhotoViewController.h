@@ -14,6 +14,7 @@
 @property (nonatomic , strong)NSMutableArray*cachePhotoArray;
 @property (nonatomic , assign)void(^returnBlock)(NSMutableArray*array);
 
+
 -(void)setDelegate:(id)delegate;
 
 @end

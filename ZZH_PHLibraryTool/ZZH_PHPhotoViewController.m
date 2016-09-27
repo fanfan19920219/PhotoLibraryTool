@@ -16,6 +16,7 @@
     
     UIButton *_cancelButton;
     UIButton *_ensureButton;
+    UILabel  *_loadingLabel;
     
     __strong ZZH_PHShowListController *listVC;
 }
@@ -72,6 +73,13 @@
     [_ensureButton setTitleColor:RGBA(35, 131, 221, 1) forState:UIControlStateNormal];
     [_ensureButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.view addSubview:_ensureButton];
+    
+    _loadingLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 40, 100)];
+    _loadingLabel.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    _loadingLabel.text = @"加载照片中，不要着急哦^_^";
+    _loadingLabel.textAlignment = NSTextAlignmentCenter;
+    _loadingLabel.textColor = RGB(144);
+    [self.view addSubview:_loadingLabel];
 }
 
 #pragma mark :::::::::::::::::: ensureButtonMethod :::::::::::::::::::::::
@@ -89,6 +97,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 collectionProtocol.DataArray = [self returnImageViewArray:ImageArray assetArray:assetArray indexArray:indexArray];
                 [_collectionView reloadData];
+                [_loadingLabel removeFromSuperview];
                 self.title = [NSString stringWithFormat:@"%@ (%lu)",self.title,(unsigned long)collectionProtocol.DataArray.count];
             });
         } ];

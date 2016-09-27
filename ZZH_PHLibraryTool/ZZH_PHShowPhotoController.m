@@ -22,14 +22,14 @@
 
 
 -(void)viewDidLoad{
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     [self create_Views];
     
 }
 
--(void)create_Views{
+-(void)create_Views {
     self.automaticallyAdjustsScrollViewInsets = NO;
     _showScrollView = [[ZZH_PHShowScrollview alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _showScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.ImageArray.count, 0);

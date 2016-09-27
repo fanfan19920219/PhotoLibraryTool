@@ -24,6 +24,8 @@
 		BD2495B61D8FACC0007659C7 /* ZZH_PHPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2495B51D8FACC0007659C7 /* ZZH_PHPhotoViewController.m */; };
 		BD2495BA1D8FADC9007659C7 /* ZZH_PHColletionProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2495B91D8FADC9007659C7 /* ZZH_PHColletionProtocol.m */; };
 		BD2495C01D8FC4FF007659C7 /* ZZH_PHCellImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2495BF1D8FC4FF007659C7 /* ZZH_PHCellImageView.m */; };
+		BD7ED0691D9A6A2000CF9764 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD7ED0661D9A6A2000CF9764 /* SVProgressHUD.bundle */; };
+		BD7ED06A1D9A6A2000CF9764 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7ED0681D9A6A2000CF9764 /* SVProgressHUD.m */; };
 		BD91EABE1D90D67700D8C407 /* ZZH_PHShowPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD91EABD1D90D67700D8C407 /* ZZH_PHShowPhotoController.m */; };
 		BD91EAC21D90E4D800D8C407 /* selete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD91EAC01D90E4D800D8C407 /* selete@2x.png */; };
 		BD91EAC31D90E4D800D8C407 /* seleted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD91EAC11D90E4D800D8C407 /* seleted@2x.png */; };
@@ -83,6 +85,9 @@
 		BD2495B91D8FADC9007659C7 /* ZZH_PHColletionProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZH_PHColletionProtocol.m; sourceTree = "<group>"; };
 		BD2495BE1D8FC4FF007659C7 /* ZZH_PHCellImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZH_PHCellImageView.h; sourceTree = "<group>"; };
 		BD2495BF1D8FC4FF007659C7 /* ZZH_PHCellImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZH_PHCellImageView.m; sourceTree = "<group>"; };
+		BD7ED0661D9A6A2000CF9764 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		BD7ED0671D9A6A2000CF9764 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		BD7ED0681D9A6A2000CF9764 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		BD91EABC1D90D67700D8C407 /* ZZH_PHShowPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZH_PHShowPhotoController.h; sourceTree = "<group>"; };
 		BD91EABD1D90D67700D8C407 /* ZZH_PHShowPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZH_PHShowPhotoController.m; sourceTree = "<group>"; };
 		BD91EABF1D90DD5A00D8C407 /* ZZH_PH_Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZZH_PH_Protocol.h; sourceTree = "<group>"; };
@@ -242,6 +247,9 @@
 		BD2495AC1D8F86A6007659C7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				BD7ED0661D9A6A2000CF9764 /* SVProgressHUD.bundle */,
+				BD7ED0671D9A6A2000CF9764 /* SVProgressHUD.h */,
+				BD7ED0681D9A6A2000CF9764 /* SVProgressHUD.m */,
 				BD2495AD1D8F86BA007659C7 /* ZZH_PH_Header.h */,
 				BD91EABF1D90DD5A00D8C407 /* ZZH_PH_Protocol.h */,
 				BD2495AE1D8F88F9007659C7 /* ZZH_PH_GetAssetObject.h */,
@@ -365,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD91EAC21D90E4D800D8C407 /* selete@2x.png in Resources */,
+				BD7ED0691D9A6A2000CF9764 /* SVProgressHUD.bundle in Resources */,
 				BD91EAC31D90E4D800D8C407 /* seleted@2x.png in Resources */,
 				BD2495771D8F826F007659C7 /* LaunchScreen.storyboard in Resources */,
 				BD2495741D8F826F007659C7 /* Assets.xcassets in Resources */,
@@ -395,6 +404,7 @@
 			files = (
 				BD2495A81D8F851E007659C7 /* ListTableViewDataSource.m in Sources */,
 				BD24956F1D8F826F007659C7 /* ViewController.m in Sources */,
+				BD7ED06A1D9A6A2000CF9764 /* SVProgressHUD.m in Sources */,
 				BD2495BA1D8FADC9007659C7 /* ZZH_PHColletionProtocol.m in Sources */,
 				BD2495B31D8F8F07007659C7 /* ZZH_PHListModel.m in Sources */,
 				BD24956C1D8F826F007659C7 /* AppDelegate.m in Sources */,
@@ -548,7 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZZH_PHLibraryTool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZZH-PHLibraryTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZZH_PHLibraryTool/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.ZZH-PHLibraryTool";
 				PRODUCT_NAME = "$(TARGET_NAME)";

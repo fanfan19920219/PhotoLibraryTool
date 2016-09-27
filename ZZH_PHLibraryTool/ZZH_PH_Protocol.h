@@ -10,6 +10,13 @@
 #define ZZH_PH_Protocol_h
 @class ZZH_PHCellImageView;
 
+@protocol ZZH_ReturnDelegate <NSObject>
+
+@optional
+
+-(void)ZZH_PHoto_ReturnArray:(NSMutableArray *)returnArray;
+
+@end
 
 @protocol ListTableViewPushDelegate <NSObject>
 

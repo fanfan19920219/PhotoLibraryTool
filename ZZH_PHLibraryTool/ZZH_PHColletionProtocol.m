@@ -37,18 +37,26 @@
             showPhotoViewController.ImageArray = self.cacheArray;
             for(ZZH_PHCellImageView *judgmentView in self.cacheArray){
                 if([judgmentView.asset.localIdentifier isEqualToString:imageView.asset.localIdentifier]){
-                    showPhotoViewController.currentIndex = [self.cacheArray indexOfObject:judgmentView];
+                    showPhotoViewController.currentIndex = [self showPhotoViewControllerIndex:judgmentView];
                     break;
                 }
             }
             [self.delegate collectionViewPush:showPhotoViewController withParameter:nil];
-            
         } @catch (NSException *exception) {
         } @finally {
         }
     }];
 }
 
+-(NSInteger)showPhotoViewControllerIndex:(ZZH_PHCellImageView*)judgmentImageView{
+    NSInteger currentindex = 0;
+    for(ZZH_PHCellImageView *ImageView in self.cacheArray){
+        if(ImageView.tag>judgmentImageView.tag){
+            currentindex++;
+        }
+    }
+    return self.cacheArray.count - currentindex -1;
+}
 
 #pragma mark ::::::::::::::::::::selectButtonDelegatemethod:::::::::::::::::::
 -(void)cellSelectButtonClick:(UIButton *)sender andZZH_PHCellImageView:(id)imageView andIndex:(NSInteger)index orClick:(BOOL)orClick{

@@ -11,7 +11,7 @@
 #import "ZZH_PH_Header.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
-@interface ViewController ()
+@interface ViewController ()<ZZH_ReturnDelegate>
 
 @end
 
@@ -36,6 +36,7 @@
     [openButton setTitle:@"打开相册" forState:UIControlStateNormal];
     [openButton setTitleColor:RGBA(35, 131, 221, 1) forState:UIControlStateNormal];
     [self.view addSubview:openButton];
+    
 }
 
 -(void)getTool{
@@ -46,12 +47,14 @@
 -(void)openAlbum{
     [self judementTool];
     ZZH_PHRootViewController *vc = [ZZH_PHRootViewController ShareZZH_PHlibraryTool];
+    vc.delegate = self;
+    
     [self presentViewController:vc animated:YES completion:nil];
-    [[ZZH_PHRootViewController ShareZZH_PHlibraryTool]getSelectPhotoWithReturnBlock:^(NSMutableArray *returnArray) {
-        
-        
-        
-    }];
+}
+
+-(void)ZZH_PHoto_ReturnArray:(NSMutableArray *)returnArray{
+    
+    NSLog(@"已经选中的照片.... %@",returnArray);
     
 }
 
@@ -61,7 +64,6 @@
     {
         case ALAuthorizationStatusNotDetermined:
         {
-            
             break;
         }
         case ALAuthorizationStatusRestricted:

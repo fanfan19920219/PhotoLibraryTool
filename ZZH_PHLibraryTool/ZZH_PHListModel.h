@@ -17,6 +17,4 @@
 
 @property (nonatomic , strong)UIImage *Photoimage;
 
-
-
 @end

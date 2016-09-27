@@ -26,11 +26,11 @@ ZZH_PHRootViewController *selfVC;
     }
     return selfVC;
 }
+
 -(void)getSelectPhotoWithReturnBlock:(void(^)(NSMutableArray* returnArray))returnBlock{
     
-    returnBlock = showListVC.returnBlock;
-    
 }
+
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -41,19 +41,22 @@ ZZH_PHRootViewController *selfVC;
 
 -(void)controllerInitMethod{
     //  NavgatioViewController
+    
+    __weak typeof(self) weakSelf = self;
+    
     showListVC = [[ZZH_PHShowListController alloc]init];
     showListVC.cachePhotoArray = [[NSMutableArray alloc]init];
+    showListVC.delegate = self.delegate;
     
-    UINavigationController *nav       = [[UINavigationController alloc]initWithRootViewController:showListVC];
-    nav.view.frame                        = self.view.frame;
-    nav.view.backgroundColor = [UIColor whiteColor];
+    UINavigationController *nav   = [[UINavigationController alloc]initWithRootViewController:showListVC];
+    nav.view.frame                    = self.view.frame;
+    nav.view.backgroundColor      = [UIColor whiteColor];
     
     [self addChildViewController:nav];
     [self.view addSubview:nav.view];
     
     
 }
-
 
 
 @end

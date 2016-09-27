@@ -14,6 +14,7 @@
 #define ZZHPHOTOTOOL [ZZH_PH_GetAssetObject Default]
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define RGB(rgb) [UIColor colorWithRed:(rgb)/255.0 green:(rgb)/255.0 blue:(rgb)/255.0 alpha:1.0]
+#define IOS_VERSION_8_OR_LATER (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
