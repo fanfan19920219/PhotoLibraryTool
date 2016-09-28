@@ -59,13 +59,13 @@
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 2, 50, 30);
-    button.titleLabel.font = [UIFont systemFontOfSize:14 weight:0.3];
+    button.titleLabel.font = [UIFont systemFontOfSize:16 weight:0.3];
     [button setTitle:@"取消" forState:UIControlStateNormal];
-    [button setTitleColor:RGB(64) forState:UIControlStateNormal];
+    [button setTitleColor:RGB(250) forState:UIControlStateNormal];
     [button addTarget:self action:@selector(dismisss) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem* barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
-    self.navigationItem.rightBarButtonItem = barButton;
+    self.navigationItem.leftBarButtonItem = barButton;
 }
 
 -(void)dismisss{

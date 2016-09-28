@@ -29,6 +29,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     ZZH_PHCellImageView *imageView = [self.DataArray objectAtIndex:indexPath.item];
+    [SVProgressHUD showWithStatus:@"加载照片中"];
     [[ZZH_PH_GetAssetObject Default]get_Aphoto:imageView.asset original:YES withReturnBlock:^(UIImage *returnImage) {
         @try {
             ZZH_PHShowPhotoController *showPhotoViewController = [[ZZH_PHShowPhotoController alloc]init];
@@ -41,6 +42,7 @@
                     break;
                 }
             }
+            [SVProgressHUD dismiss];
             [self.delegate collectionViewPush:showPhotoViewController withParameter:nil];
         } @catch (NSException *exception) {
         } @finally {

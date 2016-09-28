@@ -51,7 +51,15 @@ ZZH_PHRootViewController *selfVC;
     UINavigationController *nav   = [[UINavigationController alloc]initWithRootViewController:showListVC];
     nav.view.frame                    = self.view.frame;
     nav.view.backgroundColor      = [UIColor whiteColor];
+    nav.navigationBar.barTintColor = RGBA(63, 130, 139, 1);
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [nav.navigationBar setTitleTextAttributes:
+     
+     
+  @{NSFontAttributeName:[UIFont systemFontOfSize:19],
     
+    
+    NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self addChildViewController:nav];
     [self.view addSubview:nav.view];
     

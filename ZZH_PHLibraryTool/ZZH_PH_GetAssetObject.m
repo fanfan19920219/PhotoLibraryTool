@@ -101,7 +101,7 @@ ZZH_PH_GetAssetObject *DefaultObj;
        // NSLog(@"asset.localIdentifier --- %@",asset.localIdentifier);
         
         // 是否要原图
-        CGSize size = original ? CGSizeMake(SCREEN_WIDTH/2.5, SCREEN_HEIGHT/2.5) : CGSizeZero;
+        CGSize size = original ? CGSizeMake(SCREEN_WIDTH/1.5, SCREEN_HEIGHT/1.5) : CGSizeZero;
             // 从asset中获得图片
             [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info)
              {
@@ -143,7 +143,7 @@ ZZH_PH_GetAssetObject *DefaultObj;
     NSLog(@"assets.count --- %lu",(unsigned long)assets.count);
 
     for (PHAsset *asset in assets) {
-        CGSize size = original ? CGSizeMake(SCREEN_WIDTH/2.5, SCREEN_HEIGHT/2.5) : CGSizeZero;
+        CGSize size = original ? CGSizeMake(SCREEN_WIDTH/1.5, SCREEN_HEIGHT/1.5) : CGSizeZero;
         
         [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info)
          {

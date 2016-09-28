@@ -32,7 +32,7 @@
 }
 
 -(void)initMethod{
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor =  RGBA(63, 130, 139, 1);
 }
 
 -(void)create_Views{
@@ -46,7 +46,7 @@
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];//设置其布局方向
     
     //  创建 collectionView
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,64,SCREEN_WIDTH,SCREEN_HEIGHT - 134) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0,64,SCREEN_WIDTH,SCREEN_HEIGHT - 104) collectionViewLayout:flowLayout];
     collectionProtocol = [[ZZH_PHColletionProtocol alloc]init];
     collectionProtocol.delegate = self;
     collectionProtocol.dataSource = listVC;
@@ -63,14 +63,14 @@
     
     _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _cancelButton.frame = CGRectMake(10, SCREEN_HEIGHT - 40, 80, 40);
-    [_cancelButton setTitleColor:RGBA(35, 131, 221, 1) forState:UIControlStateNormal];
+    [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
     [self.view addSubview:_cancelButton];
     
     _ensureButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _ensureButton.frame = CGRectMake(SCREEN_WIDTH - 90, SCREEN_HEIGHT - 40, 80, 40);
     [_ensureButton addTarget:self action:@selector(ensure) forControlEvents:UIControlEventTouchUpInside];
-    [_ensureButton setTitleColor:RGBA(35, 131, 221, 1) forState:UIControlStateNormal];
+    [_ensureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_ensureButton setTitle:@"确定" forState:UIControlStateNormal];
     [self.view addSubview:_ensureButton];
     

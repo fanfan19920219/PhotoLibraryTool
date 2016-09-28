@@ -45,7 +45,7 @@
 }
 
 -(void)openAlbum{
-    [self judementTool];
+    //[self judementTool];
     ZZH_PHRootViewController *vc = [ZZH_PHRootViewController ShareZZH_PHlibraryTool];
     vc.delegate = self;
     

@@ -20,6 +20,7 @@
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
 #import "ZZH_PH_Protocol.h"
+#import "SVProgressHUD.h"
 
 #import "ZZH_PHShowListController.h"
 #import "ZZH_PH_GetAssetObject.h"
@@ -29,7 +30,6 @@
 #import "ZZH_PHCellImageView.h"
 #import "ZZH_PHShowPhotoController.h"
 #import "ZZH_PHShowScrollview.h"
-
 
 
 
