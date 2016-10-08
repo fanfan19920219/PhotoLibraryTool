@@ -47,6 +47,7 @@ ZZH_PHRootViewController *selfVC;
     showListVC = [[ZZH_PHShowListController alloc]init];
     showListVC.cachePhotoArray = [[NSMutableArray alloc]init];
     showListVC.delegate = self.delegate;
+    showListVC.maxIndex  = self.maxIndex;
     
     UINavigationController *nav   = [[UINavigationController alloc]initWithRootViewController:showListVC];
     nav.view.frame                    = self.view.frame;

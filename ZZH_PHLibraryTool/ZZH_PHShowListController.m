@@ -10,6 +10,15 @@
 #import "ListTableViewDelegate.h"
 #import "ListTableViewDataSource.h"
 #define TITLE @"相册列表"
+#define BUTTON_SIZE 44.f
+
+#define BUTTON_ANIMATION_SCALE 1.3f
+
+#define BUTTON_ANIMATION_DURATION 0.1f
+
+#define SELECTIMAGENAME @"selete@2x.png"
+
+#define SELECTEDIMAGENAME @"seleted@2x.png"
 
 @interface ZZH_PHShowListController ()<ListTableViewPushDelegate,setCachesArrayDelegate>
 {
@@ -41,21 +50,14 @@
             tableViewDelegate.DataArray = returnAssetsArray;
             tableViewDataSource.DataArray = returnListArray;
             _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 65, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+            _tableView.rowHeight = 60;
             _tableView.dataSource = tableViewDataSource;
             _tableView.delegate = tableViewDelegate;
             _tableView.tableFooterView = [[UIView alloc]init];
+            //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
             [self.view addSubview:_tableView];
         });
     }];
-    
-    
-    
-//    UIButton *dismissbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    dismissbutton.frame = CGRectMake(15, 10, 60, 20);
-//    [dismissbutton setTitle:@"关闭" forState:UIControlStateNormal];
-//    [dismissbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [dismissbutton addTarget:self action:@selector(dismisss) forControlEvents:UIControlEventTouchUpInside];
-//    [self.navigationController.navigationBar addSubview:dismissbutton];
     
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 2, 50, 30);
@@ -98,24 +100,36 @@
  *  @param judgmentIndex YES为添加   NO为删除
  *  @param object            object = PHCellImageView
  */
--(void)addOrDelete:(BOOL)judgmentIndex withObject:(id)object{
+-(void)addOrDelete:(UIButton*)judgmentIndex withObject:(id)object AndButton:(UIButton *)sender{
+    
+    
     
     ZZH_PHCellImageView *imageView = (ZZH_PHCellImageView*)object;
     
-    if(judgmentIndex==NO) {
-        
+    if(judgmentIndex.selected==NO) {
+        if(self.cachePhotoArray.count>=self.maxIndex){
+            NSString *showString = [NSString stringWithFormat:@"您最多只能选择%ld张照片",(long)self.maxIndex];
+            UIAlertView *showAlkerView = [[UIAlertView alloc]initWithTitle:@"温馨提示" message:showString delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles: nil];
+            [showAlkerView show];
+            return;
+        }
         [self.cachePhotoArray addObject:imageView];
-        
+            [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
+                sender.transform =CGAffineTransformScale(sender.transform, BUTTON_ANIMATION_SCALE,BUTTON_ANIMATION_SCALE);
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
+                        sender.transform=CGAffineTransformIdentity;
+                    }];
+                }];
     } else {
-        
         for(ZZH_PHCellImageView *judgmentImegView in self.cachePhotoArray){
-            
             if([judgmentImegView.asset.localIdentifier isEqualToString:imageView.asset.localIdentifier]){
                 [self.cachePhotoArray removeObject:judgmentImegView];
                 break;
             }
         }
     }
+    sender.selected = !sender.selected;
 }
 
 

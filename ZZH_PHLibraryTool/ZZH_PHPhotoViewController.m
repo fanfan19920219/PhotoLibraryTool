@@ -17,6 +17,7 @@
     UIButton *_cancelButton;
     UIButton *_ensureButton;
     UILabel  *_loadingLabel;
+    UILabel  *_showCurrentSelectNumLabel;
     
     __strong ZZH_PHShowListController *listVC;
 }
@@ -80,6 +81,16 @@
     _loadingLabel.textAlignment = NSTextAlignmentCenter;
     _loadingLabel.textColor = RGB(144);
     [self.view addSubview:_loadingLabel];
+    
+    _showCurrentSelectNumLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 30, 20, 20)];
+    _showCurrentSelectNumLabel.layer.cornerRadius = 10;
+    _showCurrentSelectNumLabel.clipsToBounds = YES;
+    _showCurrentSelectNumLabel.backgroundColor = [UIColor whiteColor];
+    _showCurrentSelectNumLabel.textColor = RGBA(63, 130, 139, 1);
+    _showCurrentSelectNumLabel.hidden = YES;
+    _showCurrentSelectNumLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_showCurrentSelectNumLabel];
+    
 }
 
 #pragma mark :::::::::::::::::: ensureButtonMethod :::::::::::::::::::::::
@@ -138,6 +149,23 @@
     [self.navigationController pushViewController:showViewController animated:YES];
 }
 
+-(void)refreshNumLabel{
+    
+    NSString *numString = [NSString stringWithFormat:@"%lu",(unsigned long)self.cachePhotoArray.count];
+    if([numString integerValue]==0){
+        _showCurrentSelectNumLabel.hidden = YES;
+    }else {
+        _showCurrentSelectNumLabel.text = numString;
+        _showCurrentSelectNumLabel.hidden = NO;
+    }
+    [UIView animateWithDuration:0.1 animations:^{
+        _showCurrentSelectNumLabel.transform =CGAffineTransformScale(_showCurrentSelectNumLabel.transform, 1.3, 1.3);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.1 animations:^{
+            _showCurrentSelectNumLabel.transform=CGAffineTransformIdentity;
+        }];
+    }];
+}
 
 
 @end

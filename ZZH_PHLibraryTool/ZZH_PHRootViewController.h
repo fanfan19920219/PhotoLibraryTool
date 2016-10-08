@@ -16,6 +16,8 @@
 
 @property (nonatomic,strong)void(^returnblock)(NSMutableArray *returnArray);
 
+@property (nonatomic ,assign)NSInteger maxIndex;
+
 +(instancetype)ShareZZH_PHlibraryTool;
 
 -(void)getSelectPhotoWithReturnBlock:(void(^)(NSMutableArray* returnArray))returnBlock;

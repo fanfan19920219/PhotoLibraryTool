@@ -29,6 +29,7 @@
 @optional
 -(void)collectionViewPush:(UIViewController *)nextViewContoller withParameter:(id)indexParameter;
 
+-(void)refreshNumLabel;
 
 @end
 
@@ -42,7 +43,7 @@
 @protocol setCachesArrayDelegate <NSObject>
 
 @optional
--(void)addOrDelete:(BOOL)judgmentIndex withObject:(id)object;
+-(void)addOrDelete:(UIButton*)judgmentButton withObject:(id)object AndButton:(UIButton*)sender;
 
 @end
 

@@ -45,16 +45,16 @@
     ZZH_PHCellImageView *selectView = (ZZH_PHCellImageView*)[sender superview];
     
     [self.delegate cellSelectButtonClick:sender andZZH_PHCellImageView:selectView andIndex:selectView.tag orClick:sender.selected];
-    sender.selected = !sender.selected;
-    if(sender.selected){
-        [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
-            sender.transform =CGAffineTransformScale(sender.transform, BUTTON_ANIMATION_SCALE, BUTTON_ANIMATION_SCALE);
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
-                sender.transform=CGAffineTransformIdentity;
-            }];
-        }];
-    }
+//    sender.selected = !sender.selected;
+//    if(sender.selected){
+//        [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
+//            sender.transform =CGAffineTransformScale(sender.transform, BUTTON_ANIMATION_SCALE, BUTTON_ANIMATION_SCALE);
+//        } completion:^(BOOL finished) {
+//            [UIView animateWithDuration:BUTTON_ANIMATION_DURATION animations:^{
+//                sender.transform=CGAffineTransformIdentity;
+//            }];
+//        }];
+//    }
 }
 
 

@@ -13,6 +13,8 @@
 
 @property (nonatomic , strong)NSMutableArray*cachePhotoArray;
 
+@property (nonatomic , assign)NSInteger maxIndex;
+
 @property (nonatomic , assign)id <ZZH_ReturnDelegate>delegate;
 
 @property (nonatomic , assign)void(^returnBlock)(NSMutableArray*array);

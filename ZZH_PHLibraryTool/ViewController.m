@@ -48,14 +48,13 @@
     //[self judementTool];
     ZZH_PHRootViewController *vc = [ZZH_PHRootViewController ShareZZH_PHlibraryTool];
     vc.delegate = self;
+    vc.maxIndex = 9;
     
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 -(void)ZZH_PHoto_ReturnArray:(NSMutableArray *)returnArray{
-    
     NSLog(@"已经选中的照片.... %@",returnArray);
-    
 }
 
 -(void)judementTool{

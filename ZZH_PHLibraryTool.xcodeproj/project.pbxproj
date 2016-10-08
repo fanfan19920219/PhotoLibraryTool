@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0890551D9BA2A4000F925C /* ZZH_PHListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0890541D9BA2A4000F925C /* ZZH_PHListCell.m */; };
 		BD2495691D8F826F007659C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2495681D8F826F007659C7 /* main.m */; };
 		BD24956C1D8F826F007659C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD24956B1D8F826F007659C7 /* AppDelegate.m */; };
 		BD24956F1D8F826F007659C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD24956E1D8F826F007659C7 /* ViewController.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD0890531D9BA2A3000F925C /* ZZH_PHListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZH_PHListCell.h; sourceTree = "<group>"; };
+		BD0890541D9BA2A4000F925C /* ZZH_PHListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZH_PHListCell.m; sourceTree = "<group>"; };
 		BD2495641D8F826F007659C7 /* ZZH_PHLibraryTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZZH_PHLibraryTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD2495681D8F826F007659C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BD24956A1D8F826F007659C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				BD2495BF1D8FC4FF007659C7 /* ZZH_PHCellImageView.m */,
 				BD91EAC41D913B2800D8C407 /* ZZH_PHShowScrollview.h */,
 				BD91EAC51D913B2800D8C407 /* ZZH_PHShowScrollview.m */,
+				BD0890531D9BA2A3000F925C /* ZZH_PHListCell.h */,
+				BD0890541D9BA2A4000F925C /* ZZH_PHListCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				BD2495691D8F826F007659C7 /* main.m in Sources */,
 				BD91EAC61D913B2800D8C407 /* ZZH_PHShowScrollview.m in Sources */,
 				BD2495B61D8FACC0007659C7 /* ZZH_PHPhotoViewController.m in Sources */,
+				BD0890551D9BA2A4000F925C /* ZZH_PHListCell.m in Sources */,
 				BD91EABE1D90D67700D8C407 /* ZZH_PHShowPhotoController.m in Sources */,
 				BD2495A11D8F8367007659C7 /* ZZH_PHShowListController.m in Sources */,
 				BD2495C01D8FC4FF007659C7 /* ZZH_PHCellImageView.m in Sources */,
